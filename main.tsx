@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
+/* import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 import * as postgres from "https://deno.land/x/postgres@v0.14.2/mod.ts";
 
 // Get the connection string from the environment variable "DATABASE_URL"
@@ -78,4 +78,4 @@ serve(async (req) => {
     // Release the connection back into the pool
     connection.release();
   }
-});
+}); */

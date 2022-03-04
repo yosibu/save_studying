@@ -11,6 +11,7 @@ var Person = /** @class */ (function () {
 var p = new Person('Takumi', 19);
 var s = p.sayHello();
 document.getElementById('div1').innerHTML = s;
+
 /* import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 import * as postgres from "https://deno.land/x/postgres@v0.14.2/mod.ts";
 

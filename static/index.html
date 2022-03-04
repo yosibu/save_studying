@@ -22,7 +22,7 @@
         x:<input type="number" id="x"/>
         y:<input type="number" id="y"/>
         <button id="btn">計算</button>
-        <script src="main.js"></script>
+        <script type="module" src="main.js"></script>
 
         <script type="module">
             btn.onclick = async () => {
@@ -32,6 +32,12 @@
               const json = await response.json();
               div1.innerText = "" + json.addition;
             };
+            window.onload = () => {
+                setInterval(action, 500);
+            }
+            function action(){
+                div1.innerText = new Date();
+            }
         </script>
 
     </body>

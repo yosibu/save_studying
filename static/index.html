@@ -19,15 +19,18 @@
             </nav>
         </header>
         <div id="div1"></div>
-        <button id="timebtn">time</button>
+        x:<input type="number" id="x"/>
+        y:<input type="number" id="y"/>
+        <button id="btn">計算</button>
         <script src="main.js"></script>
 
         <script type="module">
-            timebtn.onclick = async () => {
-              const response = await fetch("/api/time", {
+            btn.onclick = async () => {
+              const response = await fetch("/api/asmd?x=" + x.value + "&y=" + y.value, {
                 method: "GET"
               });
-              alert(response)
+              const json = await response.json();
+              alert(json)
             };
         </script>
 

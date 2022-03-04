@@ -12,7 +12,7 @@ class Person {
 	}
 }
 
-let p = new Person('Mike', 25);
+let p = new Person('Takumi', 19);
 let s = p.sayHello();
 
 document.getElementById('div1').innerHTML = s;

@@ -14,11 +14,10 @@ w_btn.onclick = async () => {
 }
 
 f_btn.onclick = async () => {
+  clearInterval(intervalID)
   document.getElementById("s_btn").disabled =flase;
   document.getElementById("w_btn").disabled =true;
   document.getElementById("f_btn").disabled =true;
-  clearInterval(intervalID);
-  count = 0;
 }
 
 function action(){

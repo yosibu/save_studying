@@ -55,6 +55,7 @@ main{
 
 .timer {
     border: #4b4b4b;
+    align-items: center;
 }
 
 .div1{

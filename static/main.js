@@ -1,8 +1,8 @@
 let count = 0;
 
-btn.onclick = async () => {
+s_btn.onclick = async () => {
   setInterval(action, 1000);
-  btn.style.display = "none";
+  s_btn.style.display = "none";
 };
 
 function action(){

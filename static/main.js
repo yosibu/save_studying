@@ -1,11 +1,24 @@
 let count = 0;
 let intervalID;
 s_btn.onclick = async () => {
+  document.getElementById("w_btn").disabled =true;
+  document.getElementById("f_btn").disabled =true;
+  document.getElementById("s_btn").disabled =false;
   intervalID = setInterval(action, 1000);
 };
 
+w_btn.onclick = async () => {
+  clearInterval(intervalID);
+  document.getElementById("s_btn").disabled =true;
+  document.getElementById("w_btn").disabled =false;
+}
+
 f_btn.onclick = async () => {
   clearInterval(intervalID);
+  count = 0;
+  document.getElementById("s_btn").disabled =true;
+  document.getElementById("w_btn").disabled =false;
+  document.getElementById("f_btn").disabled =false;
 }
 
 function action(){

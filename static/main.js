@@ -12,12 +12,14 @@ var p = new Person('Takumi', 19);
 var s = p.sayHello();
 document.getElementById('div1').innerHTML = s;
 
+let count = 0;
 btn.onclick = async () => {
   setInterval(action, 1000);
 };
 
 function action(){
-    div1.innerText = new Date();
+    count++;
+    div1.innerHTML = count;
 }
 
 /* btn.onclick = async () => {

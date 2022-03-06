@@ -22,7 +22,7 @@ f_btn.onclick = async () => {
 }
 
 function action(){
-    count=count+10;
+    count=count+100;
 
     let H = Math.floor(count / 3600)
     let M = Math.floor(count / 60)

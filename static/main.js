@@ -24,9 +24,9 @@ f_btn.onclick = async () => {
 function action(){
     count=count+10;
 
-    let H = count % 60000 / 1000;
-    let M = count % 3600000 / 60000;
-    let S = count % 60;
+    let H = Math.floor(count / 3600)
+    let M = Math.floor(count / 60)
+    let S = Math.floor(count % 60)
     let h = ('00' + H).slice(-2);
     let m = ('00' + M).slice(-2);
     let s = ('00' + S).slice(-2);

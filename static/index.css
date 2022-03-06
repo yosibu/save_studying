@@ -3,6 +3,8 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: #e6e6e6;
 }
 
@@ -52,4 +54,8 @@ main{
 .div1{
     border: 1rem solid #87cefa;
     width: auto;
+}
+
+table{
+    table-layout: fixed;
 }

@@ -1,9 +1,10 @@
 let count = 0;
-function startCount(){
-  count = 0;
+
+s_btn.onclick = async () => {
+  s_btn.style.display = "none";
+  f_btn.style.display = "inline";
   setInterval(action, 1000);
-  document.getElementById("s_btn").disabled = true;
-}
+};
 
 f_btn.onclick = async () => {
   f_btn.style.display = "none";

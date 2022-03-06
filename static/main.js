@@ -1,9 +1,9 @@
 let count = 0;
 
 s_btn.onclick = async () => {
-  setInterval(action, 1000);
   s_btn.style.display = "none";
   f_btn.style.display = "inline";
+  setInterval(action, 1000);
 };
 
 f_btn.onclick = async () => {

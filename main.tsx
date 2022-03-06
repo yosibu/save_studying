@@ -2,6 +2,23 @@
 import { serve } from "https://deno.land/std@0.127.0/http/server.ts";
 import { serveDir } from "https://deno.land/std@0.127.0/http/file_server.ts";
 
+const databaseUrl = Deno.env.get("DATABASE_URL")!;
+const pool = new postgres.Pool(databaseUrl, 3, true);
+
+const connection = await pool.connect();
+try {
+  // Create the table
+  await connection.queryObject`
+    CREATE TABLE IF NOT EXISTS todos (
+      id SERIAL PRIMARY KEY,
+      title TEXT NOT NULL
+    )
+  `;
+} finally {
+  // Release the connection back into the pool
+  connection.release();
+}
+
 console.log("Listening on http://localhost:8000");
 serve((req) => {
     const url = new URL(req.url);

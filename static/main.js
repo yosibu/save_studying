@@ -4,7 +4,7 @@ s_btn.onclick = async () => {
   document.getElementById("w_btn").disabled =true;
   document.getElementById("f_btn").disabled =true;
   document.getElementById("s_btn").disabled =false;
-  intervalID = setInterval(action, 1000);
+/*   intervalID = setInterval(action, 1000); */
 };
 
 w_btn.onclick = async () => {

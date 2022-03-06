@@ -13,18 +13,20 @@ var s = p.sayHello();
 document.getElementById('div1').innerHTML = s;
 
 btn.onclick = async () => {
+  setInterval(action, 1000);
+};
+
+function action(){
+    div1.innerText = new Date();
+}
+
+/* btn.onclick = async () => {
   const response = await fetch("/api/asmd?x=" + x.value + "&y=" + y.value, {
     method: "GET"
   });
   const json = await response.json();
   div1.innerText = "" + json.addition;
-};
-window.onload = () => {
-    setInterval(action, 500);
-}
-function action(){
-    div1.innerText = new Date();
-}
+}; */
 
 /* import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 import * as postgres from "https://deno.land/x/postgres@v0.14.2/mod.ts";

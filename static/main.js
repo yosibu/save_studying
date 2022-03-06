@@ -1,14 +1,15 @@
 let count = 0;
-
+let intervalID;
 s_btn.onclick = async () => {
   s_btn.style.display = "none";
   f_btn.style.display = "inline";
-  setInterval(action, 1000);
+  intervalID = setInterval(action, 1000);
 };
 
 f_btn.onclick = async () => {
   f_btn.style.display = "none";
   s_btn.style.display = "inline";
+  clearInterval(intervalID);
 }
 
 function action(){

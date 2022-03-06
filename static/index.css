@@ -59,3 +59,7 @@ main{
 table{
     table-layout: fixed;
 }
+
+td{
+    margin: 5px 10px 5px;
+}

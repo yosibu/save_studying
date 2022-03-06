@@ -3,7 +3,13 @@ let count = 0;
 s_btn.onclick = async () => {
   setInterval(action, 1000);
   s_btn.style.display = "none";
+  f_btn.style.display = "inline";
 };
+
+f_btn.onclick = async () => {
+  f_btn.style.display = "none";
+  s_btn.style.display = "inline";
+}
 
 function action(){
     count++;

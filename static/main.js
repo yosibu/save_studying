@@ -66,7 +66,7 @@ function addTable(niti,jika){
 }
 
 function addData(){
-  const respons = await fetch("/api/return",{
+  const respons = await fetch("/api/return?",{
     method: "GET"
   });
   const json = await respons.json()

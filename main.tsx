@@ -33,7 +33,7 @@ let kiroku = [];
 
 function apiTime(req: Request) {
     const params = parseSearchParams(new URL(req.url));
-    return params;
+    return createJsonResponse({params});
 }
 
 

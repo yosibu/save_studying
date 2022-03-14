@@ -27,6 +27,7 @@ f_btn.onclick = async () => {
   const json = await response.json()
   div2.innerHTML = "" + json.kiroku[0];
   div2.innerHTML = "" + json.days[0];
+  console.log(json.kiroku.length)
   count = 0;
   days = 0;
 }

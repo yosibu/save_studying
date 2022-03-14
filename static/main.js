@@ -68,6 +68,6 @@ function addTable(niti,jika){
 
 function addData(kiroku,days,kai){
   for(let i = 0;i < kai; i++){
-    addTable(kiroku[i],days[i]);
+    addTable(days[i],kiroku[i]);
   }
 }

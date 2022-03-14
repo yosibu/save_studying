@@ -18,7 +18,7 @@ f_btn.onclick = async () => {
   document.getElementById("s_btn").disabled =false;
   document.getElementById("w_btn").disabled =true;
   document.getElementById("f_btn").disabled =true;
-  const response = await fetch("/api/time?" + count , {
+  const response = await fetch("/api/time?x=" + count , {
     method: "GET"
   });
   div2.innerHTML = response;

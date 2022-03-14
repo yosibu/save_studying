@@ -34,7 +34,8 @@ let kosu = 0;
 
 const apiTime = (req: Request) => {
     const params = parseSearchParams(new URL(req.url));
-    return params;
+    const x = params.x;
+    return x;
 }
 
 

@@ -28,12 +28,7 @@ f_btn.onclick = async () => {
   div2.innerHTML = "" + json.kiroku[0];
   div2.innerHTML = "" + json.days[0];
   const nankai = json.kiroku.length;
-  let i = 0;
-  while(nankai < i){
-    console.log(i);
-    addTable(json.kiroku[i],json.days[i]);
-    i++
-  }
+  addData(json.kiroku,json.days,nankai)
   count = 0;
   days = 0;
 }
@@ -69,4 +64,10 @@ function addTable(niti,jika){
   newCell = newRow.insertCell()
   newText = document.createTextNode(h+":"+m+":"+s)
   newCell.appendChild(newText)
+}
+
+function addData(kiroku,days,kai){
+  for(let i = 0;i < kai; i++){
+    addTable(kiroku[i],days[i]);
+  }
 }

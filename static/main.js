@@ -29,7 +29,8 @@ f_btn.onclick = async () => {
   div2.innerHTML = "" + json.days[0];
   const nankai = json.kiroku.length
   console.log(nankai)
-  for(let i=0;nankai<i;i++){
+  let i
+  for(i=0;nankai<i;i++){
     console.log(i)
     addTable(json.kiroku[i],json.days[i]);
   }

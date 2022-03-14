@@ -66,8 +66,7 @@ function addTable(niti,jika){
 function addData(kiroku,days,kai){
   let table = document.getElementById("kirokuTable")
   table.deleteTHead();
-  table = document.getElementById("kirokuTable")
-  const thead = table.creatTHead();
+  let thead = table.createTHead();
   let newRow = thead.insertRow();
 
   let newCell = newRow.insertCell()

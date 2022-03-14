@@ -10,6 +10,13 @@ serve((req) => {
 
     console.log("Request:", req.method, pathname);
 
+    if(pathname.startsWith("/api/")) {
+        switch (pathname) {
+            case "api/time":
+                    return apiTime(req);
+        }
+    }
+
     // pathname に対応する static フォルダのファイルを返す（いわゆるファイルサーバ機能）
     // / → static/index.html
     // /hoge → static/hoge/index.html
@@ -21,4 +28,34 @@ serve((req) => {
         showDirListing: true,
         enableCors: true
     });
+});
+
+
+function apiTime(req: Request) {
+    const params = parseSearchParams(new URL(req.url));
+}
+
+
+const parseSearchParams = (url: URL) => {
+    const params: Record<string, string | number | boolean> = {};
+    for (const p of url.searchParams) {
+        const n = p[0], v = p[1];
+        if (v === "")
+            params[n] = true;
+        else if (v === "true")
+            params[n] = true;
+        else if (v === "false")
+            params[n] = false;
+        else if (!isNaN(Number(v)))
+            params[n] = +v;
+        else
+            params[n] = v;
+    }
+    return params;
+};
+
+const createJsonResponse = (obj: any) => new Response(JSON.stringify(obj), {
+    headers: {
+        "content-type": "application/json; charset=utf-8"
+    }
 });

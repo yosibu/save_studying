@@ -18,12 +18,6 @@ serve((req) => {
                 return apiTurn(req);
         }
     }
-
-    // pathname に対応する static フォルダのファイルを返す（いわゆるファイルサーバ機能）
-    // / → static/index.html
-    // /hoge → static/hoge/index.html
-    // /fuga.html → static/fuga.html
-    // /img/piyo.jpg → static/img/piyo.jpg
     return serveDir(req, {
         fsRoot: "static",
         urlRoot: "",

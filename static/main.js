@@ -31,14 +31,14 @@ f_btn.onclick = async () => {
   days = 0;
 }
 
-window.onload = function() {
+/* window.onload = function() {
   const response = await fetch("/api/turn",{
     method: "GET"
   });
   const json = await response.json()
   const nankai = json.kiroku.length;
   addData(json.kiroku,json.days,nankai)
-}
+} */
 
 function action(){
     count++;

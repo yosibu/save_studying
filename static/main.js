@@ -1,9 +1,12 @@
 let count = 0;
 let intervalID;
+let days;
 s_btn.onclick = async () => {
   document.getElementById("w_btn").disabled =false;
   document.getElementById("f_btn").disabled =false;
   document.getElementById("s_btn").disabled =true;
+  const day1 = new Date();
+  days = day1.toLocaleDateString()
   intervalID = setInterval(action, 1000);
 };
 
@@ -18,13 +21,14 @@ f_btn.onclick = async () => {
   document.getElementById("s_btn").disabled =false;
   document.getElementById("w_btn").disabled =true;
   document.getElementById("f_btn").disabled =true;
-  const response = await fetch("/api/time?x=" + count, {
+  const response = await fetch("/api/time?x=" + count + "&y=" + days, {
     method: "GET"
   });
   const json = await response.json()
   div2.innerHTML = "" + json.kiroku[0];
-  console.log()
+  div2.innerHTML = "" + json.days[0];
   count = 0;
+  days = 0;
 }
 
 function action(){

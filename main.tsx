@@ -30,14 +30,17 @@ serve((req) => {
     });
 });
 let kiroku = [];
+let days = [];
 let kosu = 0;
 
 const apiTime = (req: Request) => {
     const params = parseSearchParams(new URL(req.url));
     const x = params.x;
+    const y = params.y;
     kiroku[kosu] = x;
+    days[kosu] = y;
     kosu++;
-    return createJsonResponse({kiroku});
+    return createJsonResponse({kiroku,days});
 }
 
 

@@ -65,7 +65,18 @@ function addTable(niti,jika){
 
 function addData(kiroku,days,kai){
   let table = document.getElementById("kirokuTable")
-  
+  table.deleteTHead();
+  const thead = table.creatTHead();
+  let newRow = thead.insertCell();
+
+  let newCell = newRow.insertCell()
+  let newText = document.createTextNode("実施日")
+  newCell.appendChild(newText)
+
+  newCell = newRow.insertCell()
+  newText = document.createTextNode("実施時間")
+  newCell.appendChild(newText)
+
   for(let i = 0;i < kai; i++){
     addTable(days[i],kiroku[i]);
   }

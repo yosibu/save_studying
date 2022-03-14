@@ -1,6 +1,5 @@
 let count = 0;
 let intervalID;
-let interval
 let days;
 s_btn.onclick = async () => {
   document.getElementById("w_btn").disabled =false;
@@ -25,12 +24,11 @@ f_btn.onclick = async () => {
   const response = await fetch("/api/time?x=" + count + "&y=" + days, {
     method: "GET"
   });
+  const json = await response.json()
+  const nankai = json.kiroku.length;
+  addData(json.kiroku,json.days,nankai)
   count = 0;
   days = 0;
-}
-
-window.onload = function() {
-  interval = setInterval(addData,500);
 }
 
 function action(){
@@ -65,17 +63,10 @@ function addTable(niti,jika){
   newCell.appendChild(newText)
 }
 
-function addData(){
-  const respons = await fetch("/api/return?",{
-    method: "GET"
-  });
-  const json = await respons.json()
-  const nankai = json.kiroku.length;
-  const kiroku = json.kiroku;
-  const days = json.days;
+function addData(kiroku,days,kai){
   let table = document.getElementById("kirokuTable")
-  table.deleteRow(0);
-  for(let i = 0;i < nankai; i++){
+  table.deleteRow();
+  for(let i = 0;i < kai; i++){
     addTable(days[i],kiroku[i]);
   }
 }

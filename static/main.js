@@ -67,7 +67,7 @@ function addData(kiroku,days,kai){
   let table = document.getElementById("kirokuTable")
   table.deleteTHead();
   const thead = table.creatTHead();
-  let newRow = thead.insertCell();
+  let newRow = thead.insertRow();
 
   let newCell = newRow.insertCell()
   let newText = document.createTextNode("実施日")

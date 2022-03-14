@@ -23,7 +23,7 @@ f_btn.onclick = async () => {
   document.getElementById("w_btn").disabled =true;
   document.getElementById("f_btn").disabled =true;
   const response = await fetch("/api/time?x=" + count + "&y=" + days, {
-    method: "POST"
+    method: "GET"
   });
   count = 0;
   days = 0;
@@ -66,10 +66,10 @@ function addTable(niti,jika){
 }
 
 function addData(){
-  const response = await fetch("/api/return",{
+  const respons = await fetch("/api/return",{
     method: "GET"
   });
-  const json = await response.json()
+  const json = await respons.json()
   const nankai = json.kiroku.length;
   const kiroku = json.kiroku;
   const days = json.days;

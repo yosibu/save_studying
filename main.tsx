@@ -14,6 +14,8 @@ serve((req) => {
         switch (pathname) {
             case "/api/time":
                 return apiTime(req);
+            case "/api/return":
+                return apiReturn(req);
         }
     }
 
@@ -40,6 +42,9 @@ const apiTime = (req: Request) => {
     kiroku[kosu] = x;
     days[kosu] = y;
     kosu++;
+    return createJsonResponse({kiroku,days});
+}
+const apiReturn = (req: Request) => {
     return createJsonResponse({kiroku,days});
 }
 

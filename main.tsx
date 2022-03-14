@@ -35,7 +35,7 @@ let kosu = 0;
 const apiTime = (req: Request) => {
     const params = parseSearchParams(new URL(req.url));
     const x = params.x;
-    return x;
+    return createJsonResponse({x});
 }
 
 
@@ -56,3 +56,9 @@ const parseSearchParams = (url: URL) => {
     }
     return params;
 };
+
+const createJsonResponse = (obj: any) => new Response(JSON.stringify(obj), {
+    headers: {
+        "content-type": "application/json; charset=utf-8"
+    }
+});

@@ -12,7 +12,7 @@ serve((req) => {
 
     if(pathname.startsWith("/api/")) {
         switch (pathname) {
-            case "api/time":
+            case "/api/time":
                 return apiTime(req);
         }
     }

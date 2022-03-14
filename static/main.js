@@ -23,6 +23,7 @@ f_btn.onclick = async () => {
   });
   const json = await response.json()
   div2.innerHTML = "" + json.kiroku[0];
+  console.log()
   count = 0;
 }
 
@@ -35,5 +36,25 @@ function action(){
     let h = ('00' + H).slice(-2);
     let m = ('00' + M).slice(-2);
     let s = ('00' + S).slice(-2);
-    div1.innerHTML = h+":"+m+":"+s;
+    div1.innerHTML =h+":"+m+":"+s;
+}
+
+function addTable(niti,jika){
+  let table = document.getElementById("kirokuTable")
+  let newRow = table.insertRow()
+
+  let newCell = newRow.insertCell()
+  let newText = document.createTextNode(niti)
+  newCell.appendChild(newText)
+
+  let H = Math.floor(jika / 3600 % 24)
+  let M = Math.floor(jika / 60 % 60)
+  let S = Math.floor(jika % 60)
+  let h = ('00' + H).slice(-2);
+  let m = ('00' + M).slice(-2);
+  let s = ('00' + S).slice(-2);
+
+  newCell = newRow.insertCell()
+  newText = document.createTextNode(h+":"+m+":"+s)
+  newCell.appendChild(newText)
 }

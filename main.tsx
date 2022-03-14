@@ -13,7 +13,7 @@ serve((req) => {
     if(pathname.startsWith("/api/")) {
         switch (pathname) {
             case "api/time":
-                    return apiTime(req);
+                return apiTime(req);
         }
     }
 
@@ -30,10 +30,11 @@ serve((req) => {
     });
 });
 let kiroku = [];
+let kosu = 0;
 
-function apiTime(req: Request) {
+const apiTime = (req: Request) => {
     const params = parseSearchParams(new URL(req.url));
-    return createJsonResponse({params});
+    return params;
 }
 
 
@@ -54,9 +55,3 @@ const parseSearchParams = (url: URL) => {
     }
     return params;
 };
-
-const createJsonResponse = (obj: any) => new Response(JSON.stringify(obj), {
-    headers: {
-        "content-type": "application/json; charset=utf-8"
-    }
-});

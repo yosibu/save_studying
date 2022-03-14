@@ -15,7 +15,7 @@ serve((req) => {
             case "/api/time":
                 return apiTime(req);
             case "/api/turn":
-                return apiTurn();
+                return apiTurn(req);
         }
     }
 
@@ -45,7 +45,7 @@ const apiTime = (req: Request) => {
     return createJsonResponse({kiroku,days});
 }
 
-const apiTurn = () => {
+const apiTurn = (req: Request) => {
     return createJsonResponse({kiroku,days});
 }
 

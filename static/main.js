@@ -32,7 +32,7 @@ f_btn.onclick = async () => {
 }
 
 window.onload = function() {
-  const response = await fetch("/api/turn?x=" + count, {
+  const response = await fetch("/api/turn?x=",{
     method: "GET"
   });
   const json = await response.json()

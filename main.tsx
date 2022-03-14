@@ -35,7 +35,9 @@ let kosu = 0;
 const apiTime = (req: Request) => {
     const params = parseSearchParams(new URL(req.url));
     const x = params.x;
-    return createJsonResponse({x});
+    kiroku[kosu] = x;
+    kosu++;
+    return createJsonResponse({kiroku});
 }
 
 

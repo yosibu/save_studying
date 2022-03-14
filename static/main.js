@@ -22,7 +22,7 @@ f_btn.onclick = async () => {
     method: "GET"
   });
   const json = await response.json()
-  div2.innerHTML = "" + json.kiroku;
+  div2.innerHTML = "" + json.kiroku[0];
   count = 0;
 }
 

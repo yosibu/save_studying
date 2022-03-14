@@ -25,8 +25,6 @@ f_btn.onclick = async () => {
     method: "GET"
   });
   const json = await response.json()
-  div2.innerHTML = "" + json.kiroku[0];
-  div2.innerHTML = "" + json.days[0];
   const nankai = json.kiroku.length;
   addData(json.kiroku,json.days,nankai)
   count = 0;
@@ -46,7 +44,6 @@ function action(){
 }
 
 function addTable(niti,jika){
-  console.log("読み込まれている")
   let table = document.getElementById("kirokuTable")
   let newRow = table.insertRow()
 
